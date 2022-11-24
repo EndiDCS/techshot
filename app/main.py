@@ -363,21 +363,21 @@ def treina_modelo(df):
     visualizer.show()
 
     # Store data (serialize)
-    with open('../models/model.pickle', 'wb') as handle:
+    with open('model.pickle', 'wb') as handle:
         pickle.dump(clf, handle, protocol=pickle.HIGHEST_PROTOCOL)
 
     #salva palavras positivas e negativas
-    with open('../data/positive.pickle', 'wb') as handle:
+    with open('positive.pickle', 'wb') as handle:
         pickle.dump(key_positive_words, handle, protocol=pickle.HIGHEST_PROTOCOL)
 
-    with open('../data/negative.pickle', 'wb') as handle:
+    with open('negative.pickle', 'wb') as handle:
         pickle.dump(key_negative_words, handle, protocol=pickle.HIGHEST_PROTOCOL)
 
 
 def aplica_transformacoes(entrada):
-    with open("../data/positive.pickle", "rb") as input_file:
+    with open("positive.pickle", "rb") as input_file:
         key_positive_words = pickle.load(input_file)
-    with open("../data/negative.pickle", "rb") as input_file:
+    with open("negative.pickle", "rb") as input_file:
         key_negative_words = pickle.load(input_file)
     new_df = pd.DataFrame(entrada)
     new_df.columns = ['review']
@@ -412,10 +412,10 @@ if __name__ == '__main__':
         preprocess_dataset()
 
     if treinar:
-        df = pd.read_csv('../imdb_preprossed.csv')
+        df = pd.read_csv('imdb_preprossed.csv')
         treina_modelo(df)
 
-    with open("../models/model.pickle", "rb") as input_file:
+    with open("model.pickle", "rb") as input_file:
         model = pickle.load(input_file)
     entrada = ['this is a review of a film that is very good i loved the movie']
     new_x_test = aplica_transformacoes(entrada)

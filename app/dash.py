@@ -28,7 +28,7 @@ d = {
     'review':review
 }
 
-with open("../models/model.pickle","rb") as input_file:
+with open("model.pickle","rb") as input_file:
     model = pickle.load(input_file)
 
 resultado = model.predict(review)
