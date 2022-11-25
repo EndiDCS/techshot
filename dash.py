@@ -2,9 +2,10 @@ import streamlit as st
 import pandas as pd
 import numpy as np
 from PIL import Image
-
+import nltk
 import pickle
-
+nltk.download('stopwords')
+nltk.download('omw-1.4')
 from main import *
 
 st.set_page_config(
