@@ -28,7 +28,7 @@ imagens = [
     "imitacao.jpg",
     "whisper.jpg"
 ]
-st.markdown("# Avaliando filmes: Avalie os filmes abaixo ")
+st.markdown("# Análise de sentimentos: Avaliando filmes ")
 for i in range(0,len(titulos)):
 
 
@@ -41,7 +41,7 @@ for i in range(0,len(titulos)):
         image = Image.open(imagens[i])
         st.image(image, caption=None, clamp=False, channels="RGB", output_format="auto")
     with col2:
-        review = st.text_area('Review', '',key=i)
+        review = st.text_area('Escreva aqui o seu review:', '',key=i)
         if len(review) <= 1 :
             hide=True
         else:
