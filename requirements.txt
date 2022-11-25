@@ -52,7 +52,7 @@ scipy==1.7.3
 seaborn==0.12.1
 semver==2.13.0
 six==1.16.0
-sklearn
+scikit-learn
 smart-open==6.2.0
 smmap==5.0.0
 streamlit==1.11.0
