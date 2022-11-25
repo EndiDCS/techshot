@@ -375,6 +375,9 @@ def treina_modelo(df):
 
 
 def aplica_transformacoes(entrada):
+    nltk.download('omw-1.4')
+    nltk.download('punkt')
+
     with open("positive.pickle", "rb") as input_file:
         key_positive_words = pickle.load(input_file)
     with open("negative.pickle", "rb") as input_file:
